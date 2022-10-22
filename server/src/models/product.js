@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
     },
     quantity: {
         type: Number,
-        required: true
+        
     },
     flavour:{
         type:String
@@ -27,18 +27,22 @@ const productSchema = new mongoose.Schema({
         trim: true
     },
     offer: { type: Number },
-    ProductImage: [
-        { img: { type: String } }
-    ],
+   
+    // img :{
+    //      data: Buffer,
+    //      contentType:String
+    // },
+    img :{
+            type:String
+    },
     reviews: [
         {
             userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
             review: String
         }
     ],
-    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    updatedAt: Date,
+    category: { type: String , required: true },
+    
 
 }, { timestamps: true });
 

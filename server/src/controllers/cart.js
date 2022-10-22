@@ -2,7 +2,7 @@ const cart = require("../models/cart")
 const Cart = require("../models/cart")
 exports.addItemToCart = (req, res) => {
 
-    
+    // res.status(201).json({message:"cart"})
     Cart.findOne({ user: req.user._id })
         .exec((err, cart) => {
             if (err) return res.status(401).json({ err })
@@ -62,4 +62,3 @@ exports.addItemToCart = (req, res) => {
 
 
 } 
-
